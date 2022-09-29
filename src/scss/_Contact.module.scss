@@ -1,0 +1,79 @@
+@import "./variables";
+
+$contact-svg-width: 200px;
+$contact-svg-height: 150px;
+$contact-svg-ratio: $contact-svg-height / $contact-svg-width;
+
+$contact-svg-large-width: 300px;
+$contact-svg-large-height: $contact-svg-ratio * $contact-svg-large-width;
+
+$contect-links-size: 24px;
+
+.contactContainer {
+    margin-bottom: 3em !important;
+}
+
+.card {
+    background-color: #F96666;
+    padding: 2rem 4rem;
+    border-radius: $border-radius-general;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    ul {
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+.contactSvg {
+    width: $contact-svg-width;
+    height: $contact-svg-height;
+    margin: 0 auto;
+}
+
+.contackLinkIcons {
+    width: $contect-links-size;
+    height: $contect-links-size;
+
+    &:hover {
+        fill: purple;
+    }
+}
+
+.greeting {
+    padding: 1rem 0;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: $font-weight-normal;
+
+    .email {
+        padding-top: 1rem;
+        font-size: 1rem;
+        font-weight: $font-weight-light;
+    }
+}
+
+@media screen and (min-width: $break-large) {
+    .card {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contactSvg {
+        width: $contact-svg-large-width;
+        height: $contact-svg-large-height;
+        margin: 0;
+    }
+    
+}

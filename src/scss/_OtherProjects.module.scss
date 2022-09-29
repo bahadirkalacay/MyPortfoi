@@ -1,0 +1,53 @@
+@import "variables";
+
+.container {
+    border-radius: 10px;
+    border: 5px solid #F96666;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #EEEEEE;
+    
+    transition: box-shadow .2s ease-out;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba($color: $clr-accent-pink, $alpha: .8);
+    }
+
+
+}
+
+.title {
+    margin-top: 0;
+    color: black;
+}
+
+.subtitle {
+    font-weight: $font-weight-normal;
+    color: black;
+    margin: 0;
+    margin-top: -0.5rem;
+}
+
+.description {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.technologies {
+    font-weight: $font-weight-normal;
+    margin: 0.5rem 0;
+    color: #F96666;
+}
+
+.link {
+    text-decoration: none;
+    margin-right: 1rem;
+    color: #F96666;
+
+    transition: color .2s ease-out;
+
+    &:hover {
+        color: white;
+    }
+}

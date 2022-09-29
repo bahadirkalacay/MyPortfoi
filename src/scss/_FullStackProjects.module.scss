@@ -1,0 +1,208 @@
+@import "./variables";
+
+$go-circle-diameter: 60px;
+$go-arrow-size: 40px;
+$project-img-width: 200px;
+$project-img-height: 120px;
+$project-img-ratio: $project-img-height / $project-img-width;
+
+$project-img-large-height: 400px;
+$project-img-large-width: $project-img-large-height / $project-img-ratio;
+
+.card {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+}
+
+.cardLayout {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cardText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card1 {
+    background-color: #F96666;
+    color: black;
+}
+
+.card2 {
+    background-color: #F96666;
+    color: black;
+}
+
+
+.title {
+    font-size: 1.2rem;
+    font-weight: $font-weight-normal;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.links {
+    color: $clr-dark-grey;
+    margin-bottom: 1rem;
+    a {
+        text-decoration: none;
+        color: #EEEEEE;
+        transition: color 0.2s ease-out;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    .linkSeparator {
+        display: inline-block;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        color: #EEEEEE;
+    }
+}
+
+.goButton {
+    display: inline-block;
+
+    &:hover .arrow {
+        animation: moveForward 0.8s linear infinite;
+    }
+}
+
+.goCircle {
+    width: 100%;
+    height: $go-circle-diameter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: $go-circle-diameter;
+        height: $go-circle-diameter;
+        background-color: $clr-bg;
+        border-radius: 50%;
+        z-index: 1;
+    }
+}
+
+.arrow {
+    fill: white;
+    position: relative;
+    z-index: 2;
+    width: $go-arrow-size;
+    height: $go-arrow-size;
+}
+
+.projectDescription {
+    font-size: 1rem;
+    color: #EEEEEE;
+    margin-top: 1rem;
+
+    li {
+        margin: 0.5rem 0;
+    }
+}
+
+.projectLink {
+    display: block;
+    position: relative;
+    height: 4rem;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
+    transform: scale(1);
+    transition: transform 0.5s ease-out;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.projectImg {
+    width: $project-img-width;
+    height: $project-img-height;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgb(94, 91, 91);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@media screen and (min-width: $break-large) {
+    .title{
+        text-align: left;
+    }
+
+    .card {
+        border-top-left-radius: $border-radius-general;
+        border-bottom-left-radius: $border-radius-general;
+        padding-left: 0;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        // transform: translateX(10%);
+
+        .cardLayout {
+            margin: 0;
+            display: grid;
+            grid-template-columns: $go-circle-diameter 4fr 6fr;
+            min-height: $project-img-large-height;
+        }
+    }
+
+    .projectLink {
+        width: 100%;
+        grid-column: 3 / 4;
+        margin-left: 2rem;
+
+        .projectImg {
+            width: $project-img-large-width;
+            height: $project-img-large-height;
+            left: 0;
+        }
+    }
+
+    .links{
+        margin-bottom: 0;
+    }
+
+    .cardText {
+        position: relative;
+        align-items: flex-start;
+        grid-column: 2 / 3;
+
+        .goButton {
+            position: absolute;
+            left: -($go-circle-diameter + $go-arrow-size / 2);
+            top: 6px;
+        }
+    }
+}
+
+@keyframes moveForward {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(10px);
+        opacity: 0.5;
+    }
+}

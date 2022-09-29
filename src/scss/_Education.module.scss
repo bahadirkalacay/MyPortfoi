@@ -1,0 +1,153 @@
+@import "./variables";
+
+$circle-radius: 10px;
+$arrow-height: 30px;
+$arrow-width: 10px;
+$institution-title-width: 300px;
+$institution-title-small-width: 200px;
+
+.eduContainer {
+    margin-bottom: 3rem;
+}
+
+.eduList {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+.eduListItem {
+    list-style: none;
+    height: 100px;
+    border-left: 2px solid $clr-accent-grey;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: $circle-radius * 2;
+        height: $circle-radius * 2;
+        border-radius: 50%;
+        background-color: #F96666;
+        left: -($circle-radius + 1);
+    }
+}
+
+.eduButton {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    max-width: $institution-title-width;
+    text-align: left;
+    text-transform: uppercase;
+
+    &:active {
+        color: black;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        bottom: -5px;
+        left: -10px;
+        right: -10px;
+        border-radius: $border-radius-s;
+        transition: border-radius $border-radius-transition-time ease-out;
+    }
+
+    &:hover::before {
+        border-radius: $border-radius-e;
+        border: 2px solid $clr-accent-grey;
+    }
+}
+
+.eduTime {
+    font-size: 0.8rem;
+    font-weight: 400;
+    max-width: $institution-title-width;
+    text-align: left;
+    color: #000;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: $arrow-height solid $clr-accent-grey;
+    border-left: $arrow-width/2 solid transparent;
+    border-right: $arrow-width/2 solid transparent;
+    transform: translateX(-$arrow-width/2 + 1);
+}
+
+.eduDescriptionList {
+    display: none;
+}
+
+@media screen and (min-width: $break-large) {
+    .breakControl {
+        display: none !important;
+    }
+
+    .eduItemGrid {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        grid-auto-rows: min-content;
+    }
+
+    .eduDescriptionList {
+        display: block;
+        margin-left: 4rem;
+        color: black;
+        border-bottom: 2px solid rgba($color: black, $alpha: .2);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 0;
+        grid-column: 2 / 3;
+        grid-row: 1 / -1;
+
+        transition: color .3s ease-out;
+
+   
+        li {
+            font-size: 1rem;
+        }
+    }
+
+    .lastItem {
+        border-bottom: none;
+    }
+
+    .eduListItem {
+        height: 100%;
+    }
+
+    .eduButton {
+        cursor: default;
+        grid-column: 1 / 2;
+        align-self: flex-end;
+        width: $institution-title-small-width;
+
+        &::before{
+            content: none;
+        }
+
+        &:hover ~ .eduDescriptionList {
+            color: black;
+        }
+    }
+
+    .eduTime {
+        grid-column: 1 / 2;
+        align-self: flex-start;
+        width: $institution-title-small-width;
+
+    }
+
+}

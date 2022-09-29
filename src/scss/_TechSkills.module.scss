@@ -1,0 +1,73 @@
+@import "./variables";
+
+$cardImage-width: 200px;
+$cardImage-height: 150px;
+
+.cardGrid {
+    padding: 3rem;
+}
+
+.skillCard {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 1rem 2rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.frontEndCard {
+    background-color: #EEEEEE;
+    color: black;
+    margin-right: 0.5em;
+}
+
+.backEndCard {
+    background-color: #F96666;
+    color: black;
+    
+}
+
+.title {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.skillList {
+    line-height: 2;
+    align-self: flex-start;
+}
+
+.skillImg {
+    width: $cardImage-width;
+    height: $cardImage-height;
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: $break-large) {
+    .cardGrid {
+        padding-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .skillCard {
+        width: 100%;
+        max-width: 400px;
+        margin-left: 0;
+    }
+
+    .frontEndCard {
+        justify-self: flex-end;
+        border-top-left-radius: $border-radius-general;
+        border-bottom-left-radius: $border-radius-general;
+    }
+
+    .backEndCard {
+        justify-self: flex-start;
+        border-bottom-right-radius: $border-radius-general;
+        border-top-right-radius: $border-radius-general;
+        margin-left: 0 !important;
+        // transform: translateY(30px);
+    }
+}

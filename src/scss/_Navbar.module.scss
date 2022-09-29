@@ -1,0 +1,93 @@
+@import './variables';
+
+.navBg {
+
+    background-color: #F96666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navContainer {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarList {
+    display: flex;
+    flex-direction: column;
+
+    li {
+        list-style: none;
+        margin: 0;
+        margin-bottom: .5rem;
+        padding: 0;
+        
+        
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        position: relative;
+
+
+        &:focus {
+            color: $clr-accent-grey;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: -5px;
+            bottom: -5px;
+            left: -10px;
+            right: -10px;
+            transition: border-radius $border-radius-transition-time ease-out;
+            border-radius: $border-radius-s;
+
+
+        }
+
+        &:hover::before{
+
+            border: 2px solid $clr-accent-grey;
+            border-radius: $border-radius-e;
+        
+        }
+    }
+
+}
+
+
+.logo {
+
+    svg ellipse {
+
+        transition: fill .2s ease-in-out;
+    }
+
+    &:hover svg ellipse{
+        fill: $clr-accent-purple;
+    }
+    
+}
+
+
+@media screen and (min-width: $break-medium){
+.navbarList {
+    flex-direction: row;
+
+    li {
+        margin-bottom: 0;
+    }
+
+    a{
+        margin-left: 2rem;
+    }
+}
+}

@@ -1,0 +1,76 @@
+@import "./variables";
+
+.cardGrid {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    padding: 1rem;
+    color: black;
+    text-align: center;
+}
+
+.cardTopLeft {
+    background-color: #F96666;
+    border-top-right-radius: $border-radius-general;
+    border-bottom-right-radius: $border-radius-general;
+}
+.cardTopRight {
+    background-color: #EEEEEE;
+    border-bottom-left-radius: $border-radius-general;
+    border-top-left-radius: $border-radius-general;
+}
+.cardBottomLeft {
+    background-color: #EEEEEE;
+    border-bottom-right-radius: $border-radius-general;
+    border-top-right-radius: $border-radius-general;
+}
+.cardBottomRight {
+    background-color: #F96666;
+    border-bottom-left-radius: $border-radius-general;
+    border-top-left-radius: $border-radius-general;
+}
+
+.cardTitle {
+    font-size: 1.2rem;
+    font-weight: $font-weight-normal;
+    margin: 0;
+    word-wrap: break-word;
+    display: block;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.cardDetails {
+    font-size: 1rem;
+    font-weight: $font-weight-light;
+}
+
+.icon {
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: $break-xsmall) {
+    .cardGrid {
+        grid-template-columns: auto;
+    }
+
+    .cardTopLeft,
+    .cardTopRight,
+    .cardBottomLeft,
+    .cardBottomRight {
+        border-radius: 0;
+    }
+}
+
+@media screen and (min-width: $break-large) {
+    .cardGrid {
+        width: 100%;
+        margin-left: 0;
+    }
+}

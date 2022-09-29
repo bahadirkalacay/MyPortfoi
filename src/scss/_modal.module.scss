@@ -1,0 +1,135 @@
+@import "./variables";
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: rgba($color: white, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0, 1);
+    transition: transform 0.2s ease-out;
+    overflow: auto;
+
+    .modalContent {
+        width: 80%;
+        background-color: white;
+        padding: 1rem 2rem;
+        color: black;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.5);
+        display: flex;
+        flex-direction: column;
+        transform: scale(0);
+    }
+
+    &.modalActive {
+        transform: scale(1, 1);
+
+        .modalContent {
+            animation: popIn 0.2s 0.2s ease forwards;
+        }
+    }
+}
+
+.modalSlide {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: rgba($color: black, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease-out;
+
+    .modalSlideContent {
+        background-color: $clr-accent-yellow;
+        color: black;
+        width: 150%;
+        padding: 2rem;
+        padding-bottom: 3rem;
+        overflow: hidden;
+
+        transform: translateX(100%);
+    }
+
+    .modalSlideContentBody {
+        max-width: 500px;
+    }
+
+    &.modalSlideActive {
+        opacity: 1;
+        pointer-events: auto;
+
+        .modalSlideContent {
+            animation: slideIn 0.5s 0.2s ease-out forwards;
+        }
+    }
+}
+
+
+
+.descriptionList {
+    margin: 0.5rem;
+}
+
+.closeButton {
+    display: inline-block;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    background: none;
+    margin: 0;
+    margin-left: auto;
+    padding: 0;
+    cursor: pointer;
+    transform: scale(1);
+
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+// @media screen and (min-width: $break-large) {
+//     .modalSlide {
+//         display: none;
+//     }
+// }
+
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    80% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(1.5rem);
+    }
+}

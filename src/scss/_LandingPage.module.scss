@@ -1,0 +1,64 @@
+@import "./variables";
+
+.canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.landingContainer {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-weight: $font-weight-bold;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    color: #000;
+}
+
+.mainTitle {
+    font-weight: $font-weight-bold;
+    font-size: 2rem;
+    color: #000;
+}
+
+.description {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: $clr-accent-grey;
+    line-height: 1.5;
+    padding: 1rem 0;
+    color: #000;
+    text-align: center !important;
+}
+
+.hireMeButton {
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: $break-large) {
+    .subtitle {
+        font-size: 2rem;
+        font-weight: $font-weight-thin;
+        margin-bottom: -2rem;
+    }
+
+    .mainTitle {
+        font-size: 4rem;
+    }
+    .description {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+}
