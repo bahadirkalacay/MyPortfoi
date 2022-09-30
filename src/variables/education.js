@@ -15,7 +15,7 @@ export const education = [
     time: "Feb 2021",
     descriptions: [
       "Front-end Foundations: HTML, CSS, JavaScript, TypeScript",
-      "Front-end Framework: React, Bootstrap",
+      "Front-end Framework: React, Bootstrap, Material UI, TailwindCSS",
       "Database: MongoDB, MySQL",
       "UI design: Figma.",
       "Back-end Foundations: JavaScript",
@@ -27,21 +27,9 @@ export const education = [
     title: "KSO Bilişim LTD. ŞTİ.",
     time: "March 2022 - June 2022",
     descriptions: [
-      "Front-end foundations: HTML, CSS, JavaScript.",
+      "Front-end foundations: HTML, CSS, JavaScript, TypeScript",
       "Front-end framework: React, Bootstrap, Sass",
     ],
   },
-  {
-    id: 4,
-    title: "Freelancer Developer",
-    time: "July 2022 - Present",
-    descriptions: [
-      "Front-end foundations: HTML, CSS, JavaScript, TypeScript",
-      "Front-end framework: React, Bootstrap, Sass, Material UI, TailwindCSS",
-      "Database: MongoDB, MySQL",
-      "UI design: Figma.",
-      "Back-end Foundations: JavaScript",
-      "Back-end Framework: Node.js with Express.",
-    ],
-  },
+
 ];
