@@ -12,7 +12,7 @@ const Education = () => {
 
     return (
         <div className={styles.eduContainer}>
-            <h2 className="primaryTitle edu-title">My Education</h2>
+            <h2 className="primaryTitle edu-title">My Resume</h2>
             <ul className={styles.eduList}>
                 {education.map((item, index) => (
                     <EducationItem
